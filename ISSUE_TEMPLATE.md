@@ -4,20 +4,64 @@
 
 #### 내용 (Description)
 <!--
-    이슈에 대해 자세하게 작성해 주세요. 버그이면 재현 과정을 함께 작성해 주세요.
+    chrome 크롬에서 구현이되는데
+     ie11 구현이안됩니다
 -->
 
 #### 환경 (Environment)
 <!--
-    개발 중인 환경을 작성해 주시면 이슈를 파악하는데 큰 도움이 됩니다.
+    visual studio 2008 에서 개발
 -->
 
-* OS, OS Version, Browser, Browser Version, Device Information, etc:
+* window, window7 Ultimate K, ie11, 11.0.9600.18952, Device Information, etc:
 
 #### 추가 정보 (Additional Info)
 <!--
-    저희가 확인할 수 있는 웹 사이트 주소, 소스 코드 등의 추가 정보가 있으면 보다 빠르게 도움을 드릴 수 있습니다.
-    소스 코드를 공개하기 어려운 경우에는 mapsopenapi@naver.com 메일로 공유해 주시면 됩니다.
+    <%@ Page Language="C#" AutoEventWireup="true" CodeFile="naver_panorama.aspx.cs" Inherits="main_multiview_map_naver" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>네이버로드뷰</title>
+    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1" />
+    <meta name="CODE_LANGUAGE" content="C#" />
+    <meta name="vs_defaultClientScript" content="JavaScript" />
+    
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=AxhGpg76LrmMsAjsQEtJ&submodules=panorama,geocoder"></script>
+    
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div id="pano" style="width: 100%; height: 800px;">
+    </div>
+    </form>
+
+    <script type="text/javascript">
+     
+            var pano = null;
+
+            naver.maps.onJSContentLoaded = function() {
+                // 아이디 혹은 지도좌표로 파노라마를 표시할 수 있습니다.
+                pano = new naver.maps.Panorama("pano", {
+                    // panoId: "OregDk87L7tsQ35dcpp+Mg==",
+                    position: new naver.maps.LatLng(37.3599605, 127.1058814),
+                    pov: {
+                        pan: -135,
+                        tilt: 29,
+                        fov: 100
+                    }
+                });
+            };
+       
+    </script>
+
+
+http://localhost/gimje16/naver_panorama.aspx
+
+
+</body>
+</html>
+
 -->
 
 * Site URL, Source Code
